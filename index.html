@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRFlow Tasks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+    <a class="sidebar__logo" href="#dashboard">FlowDesk</a>
+
+    <p class="sidebar__section">Main Menu</p>
+    <a class="sidebar__link sidebar__link--active" href="#dashboard">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="sidebar__link" href="#tasks">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Tasks
+    </a>
+    <a class="sidebar__link" href="#calendar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Calendar
+    </a>
+    <a class="sidebar__link" href="#employee">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Employee
+    </a>
+    <a class="sidebar__link" href="#notes">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      Notes
+    </a>
+
+
+    <p class="sidebar__section">Other</p>
+    <a class="sidebar__link" href="#settings">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Settings
+    </a>
+    <a class="sidebar__link" href="#about">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      About
+    </a>
+    <button class="sidebar__collapse-toggle" id="sidebar-collapse-toggle" type="button" aria-label="Collapse sidebar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+  </aside>
+
+  <div class="sidebar__overlay" id="sidebar-overlay"></div>
+
+  <div class="layout">
+    <header class="topbar">
+      <div class="topbar__left">
+        <div class="topbar__primary">
+          <button class="topbar__hamburger" id="sidebar-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="topbar__greeting-row">
+            <p class="topbar__greeting js-greeting" id="topbar-greeting">Good Morning</p>
+            <span class="topbar__clock-sep" aria-hidden="true">•</span>
+            <span class="topbar__clock js-clock" id="topbar-clock"></span>
+          </div>
+        </div>
+        <div class="topbar__secondary">
+          <h1 class="topbar__name">BOND</h1>
+          <p class="topbar__position">MI6</p>
+        </div>
+      </div>
+      <div class="topbar__profile">
+        <button class="topbar__filter" id="task-filter-date" type="button" aria-label="Filter tasks by date">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span class="topbar__filter-text" id="task-filter-date-text">All</span>
+        </button>
+        <span class="topbar__profile-name">007</span>
+        <img
+          class="topbar__avatar"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='32' fill='%23dbeafe'/%3E%3Ccircle cx='80' cy='58' r='28' fill='%233b82f6'/%3E%3Cpath d='M38 132c8-24 30-38 42-38s34 14 42 38' fill='%231d4ed8'/%3E%3C/svg%3E"
+          alt="Profile photo"
+        >
+      </div>
+    </header>
+
+    <div class="greeting-banner">
+      <p class="greeting-banner__text js-greeting">Good Morning</p>
+      <span class="greeting-banner__sep">•</span>
+      <span class="greeting-banner__clock js-clock"></span>
+    </div>
+
+    <main class="content container" id="dashboard">
+      <section class="task-form" id="about" aria-labelledby="task-form-title">
+        <div class="task-form__header">
+          <p class="task-form__eyebrow">Task input</p>
+          <h2 class="task-form__title" id="task-form-title">Create a new task</h2>
+        </div>
+
+        <form class="task-form__form" id="task-form">
+          <div class="task-form__field task-form__field--full">
+            <label class="task-form__label" for="task-text">Task</label>
+            <textarea
+              class="task-form__textarea"
+              id="task-text"
+              name="task"
+              rows="4"
+              placeholder="Write your task here"
+            ></textarea>
+          </div>
+
+          <div class="task-form__field">
+            <label class="task-form__label" for="task-date">Task date</label>
+            <input class="task-form__date" id="task-date" name="taskDate" type="date">
+          </div>
+
+          <div class="task-form__field">
+            <label class="task-form__label" for="task-priority">Priority</label>
+            <select class="task-form__priority" id="task-priority" name="priority">
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+
+          <div class="task-form__actions">
+            <button class="button button--primary task-form__submit" type="submit">Submit Task</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="task-board" id="tasks" aria-label="Task board">
+        <article class="task-list task-list--todo task-list--primary">
+          <div class="task-list__header">
+            <div>
+              <p class="task-list__eyebrow">Active work</p>
+              <h2 class="task-list__title">To Do</h2>
+            </div>
+            <button class="button button--danger" id="delete-all-button" type="button">Delete All</button>
+          </div>
+          <ul class="task-list__items task-list__items--spacious" id="todo-list"></ul>
+        </article>
+
+        <article class="task-list task-list--done" id="done">
+          <div class="task-list__header">
+            <div>
+              <p class="task-list__eyebrow">Completed work</p>
+              <h2 class="task-list__title">Done</h2>
+            </div>
+          </div>
+          <ul class="task-list__items" id="done-list"></ul>
+        </article>
+      </section>
+      <section class="panel-grid" aria-label="Additional sections">
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content container">
+        <p class="footer__text">Task planner for structured daily work.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="filter-modal" id="filter-modal">
+    <div class="filter-modal__overlay" id="filter-modal-overlay"></div>
+    <div class="filter-modal__card" role="dialog" aria-label="Filter tasks by date">
+      <div class="filter-modal__header">
+        <h3 class="filter-modal__title">Filter by Date</h3>
+        <button class="filter-modal__close" id="filter-modal-close" type="button" aria-label="Close filter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="filter-modal__body">
+        <label class="filter-modal__label" for="filter-modal-date">Select date</label>
+        <input class="filter-modal__date" id="filter-modal-date" type="date">
+      </div>
+      <div class="filter-modal__actions">
+        <button class="filter-modal__action" data-filter="today">Today</button>
+        <button class="filter-modal__action" data-filter="week">This Week</button>
+        <button class="filter-modal__action" data-filter="month">This Month</button>
+        <button class="filter-modal__action filter-modal__action--active" data-filter="all">All</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+, 
