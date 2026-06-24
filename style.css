@@ -1,3 +1,4 @@
+/* Reset & Default */
 *,
 *::before,
 *::after {
@@ -14,12 +15,14 @@ body {
   font-size: var(--font-size-md);
   background: var(--color-background);
   color: var(--color-text);
+  /* Grid layout: sidebar fixed width + content fills rest */
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
   min-height: 100vh;
   transition: grid-template-columns var(--transition-base);
 }
 
+/* Collapsed sidebar  */
 body.sidebar-collapsed {
   grid-template-columns: var(--sidebar-collapsed-width) 1fr;
 }
@@ -49,6 +52,7 @@ textarea {
   resize: vertical;
 }
 
+/* Focus ring: visible for keyboard nav, subtle for click */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
@@ -58,7 +62,7 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
-/* ========== SIDEBAR ========== */
+/* === SIDEBAR === */
 
 .sidebar {
   position: sticky;
@@ -147,7 +151,7 @@ body.sidebar-collapsed .sidebar__link svg {
   height: 22px;
 }
 
-/* Desktop sidebar collapse toggle */
+/* Desktop sidebar collapse toggle — hidden on mobile */
 .sidebar__collapse-toggle {
   margin-top: auto;
   align-self: flex-end;
@@ -185,12 +189,13 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   z-index: 40;
 }
 
-/* ========== TOPBAR ========== */
+/* === TOPBAR === */
 
 .topbar {
   position: sticky;
   top: 0;
   z-index: 30;
+  /* Glassmorphism effect with semi-transparent bg + blur */
   background: rgba(244, 247, 251, 0.92);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--color-border);
@@ -261,6 +266,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   transition: transform var(--transition-base), opacity var(--transition-base);
 }
 
+/* Hamburger → X animation when sidebar is open */
 .topbar__hamburger[aria-expanded="true"] span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -347,7 +353,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   font-weight: 500;
 }
 
-/* ========== GREETING BANNER (mobile only) ========== */
+/* === GREETING BANNER (mobile only) === */
 
 .greeting-banner {
   display: none;
@@ -495,7 +501,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   background: var(--color-primary-dark);
 }
 
-/* ========== LAYOUT ========== */
+/* === LAYOUT === */
 
 .layout {
   display: flex;
@@ -512,7 +518,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   width: 100%;
 }
 
-/* ========== CARD SHARED ========== */
+/* === CARD SHARED === */
 
 .task-form,
 .task-list {
@@ -522,7 +528,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   box-shadow: var(--shadow-sm);
 }
 
-/* ========== TASK FORM ========== */
+/* === TASK FORM === */
 
 .task-form {
   padding: var(--spacing-xl);
@@ -585,7 +591,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   justify-content: flex-end;
 }
 
-/* ========== BUTTONS ========== */
+/* === BUTTONS === */
 
 .button {
   display: inline-flex;
@@ -623,7 +629,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   background: #fee2e2;
 }
 
-/* ========== TASK BOARD ========== */
+/* === TASK BOARD === */
 
 .task-board {
   display: grid;
@@ -674,6 +680,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   padding: var(--spacing-md);
 }
 
+/* Overdue visual red border + soft pulse — draws attention */
 .task-item--overdue {
   border: 1.5px solid var(--color-danger-dark);
   background: var(--color-danger-muted);
@@ -735,6 +742,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   color: var(--color-primary-dark);
 }
 
+/* Priority badge colors red=high, yellow=medium, green=low */
 .task-item__badge--high {
   background: #fee2e2;
   color: #b91c1c;
@@ -768,7 +776,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   color: var(--color-text-muted);
 }
 
-/* ========== INFO PANELS ========== */
+/* === INFO PANELS === */
 
 .panel-grid {
   display: grid;
@@ -802,7 +810,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   line-height: 1.6;
 }
 
-/* ========== FOOTER ========== */
+/* === FOOTER === */
 
 .footer {
   padding: var(--spacing-xl) 0;
@@ -814,8 +822,9 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   font-size: var(--font-size-sm);
 }
 
-/* ========== RESPONSIVE ========== */
+/* === RESPONSIVE === */
 
+/* Mobile/tablet sidebar jadi off-canvas, collapse toggle hilang */
 @media (max-width: 1024px) {
   body {
     grid-template-columns: 1fr;
@@ -879,6 +888,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
   }
 }
 
+/* Small mobile topbar stacked, greeting pindah ke banner */
 @media (max-width: 768px) {
   .topbar {
     height: auto;
@@ -983,6 +993,7 @@ body.sidebar-collapsed .sidebar__collapse-toggle {
 }
 
 
+/* Design roots colors, spacing, radius, shadows, fonts, layout */
 :root {
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
