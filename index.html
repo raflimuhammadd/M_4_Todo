@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HRFlow Tasks</title>
+  <title>FlowDesk</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Sidebar nav, sticky on desktop, slide-in on mobile -->
   <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
     <a class="sidebar__logo" href="#dashboard">FlowDesk</a>
 
@@ -33,6 +34,7 @@
     </a>
 
 
+    <!-- Secondary nav group -->
     <p class="sidebar__section">Other</p>
     <a class="sidebar__link" href="#settings">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -42,14 +44,18 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       About
     </a>
+    <!-- Desktop-only collapse button, hidden on mobile -->
     <button class="sidebar__collapse-toggle" id="sidebar-collapse-toggle" type="button" aria-label="Collapse sidebar">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
   </aside>
 
+  <!-- Overlay untuk nutup sidebar di mobile -->
   <div class="sidebar__overlay" id="sidebar-overlay"></div>
 
+  <!-- Main content wrapper -->
   <div class="layout">
+    <!-- Topbar: sticky, shows greeting, clock, filter, avatar -->
     <header class="topbar">
       <div class="topbar__left">
         <div class="topbar__primary">
@@ -74,7 +80,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           <span class="topbar__filter-text" id="task-filter-date-text">All</span>
         </button>
-        <span class="topbar__profile-name">007</span>
+        <span class="topbar__profile-name"></span>
         <img
           class="topbar__avatar"
           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='32' fill='%23dbeafe'/%3E%3Ccircle cx='80' cy='58' r='28' fill='%233b82f6'/%3E%3Cpath d='M38 132c8-24 30-38 42-38s34 14 42 38' fill='%231d4ed8'/%3E%3C/svg%3E"
@@ -88,8 +94,14 @@
       <span class="greeting-banner__sep">•</span>
       <span class="greeting-banner__clock js-clock"></span>
     </div>
+    <div class="greeting-banner__info">
+        <div class="greeting-banner__name">BOND</div>
+        <p class="greeting-banner__position">MI6</p>
+    </div>
 
+    <!-- Main content: task form + task board -->
     <main class="content container" id="dashboard">
+      <!-- Task creation form -->
       <section class="task-form" id="about" aria-labelledby="task-form-title">
         <div class="task-form__header">
           <p class="task-form__eyebrow">Task input</p>
@@ -128,6 +140,7 @@
         </form>
       </section>
 
+      <!-- Task board To Do  -->
       <section class="task-board" id="tasks" aria-label="Task board">
         <article class="task-list task-list--todo task-list--primary">
           <div class="task-list__header">
@@ -154,6 +167,7 @@
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer__content container">
         <p class="footer__text">Task planner for structured daily work.</p>
@@ -161,6 +175,7 @@
     </footer>
   </div>
 
+  <!-- Filter modal: date picker + preset buttons -->
   <div class="filter-modal" id="filter-modal">
     <div class="filter-modal__overlay" id="filter-modal-overlay"></div>
     <div class="filter-modal__card" role="dialog" aria-label="Filter tasks by date">
